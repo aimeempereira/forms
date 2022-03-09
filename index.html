@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FAVICON -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="./assets/site.webmanifest" />
+    <!-- fim de FAVICON -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- ICONS -->
+    <script
+      src="https://kit.fontawesome.com/a143aaf478.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Gulliver Traveller</title>
+  </head>
+  <body>
+    <!-- menu de navegação -->
+    <header class="header-top">
+      <a href=""
+        ><h1 class="logo">
+          Gulliver <span class="logo-serif">Traveller</span>
+        </h1></a
+      >
+
+      <!-- links da navegação -->
+      <nav class="header-nav">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Artigos</a></li>
+          <li><a href="">Dicas de viagem</a></li>
+        </ul>
+        <div class="search">
+          <input
+            type="search"
+            id="site-search"
+            name="q"
+            placeholder="Procure no site"
+          />
+
+          <button type="submit" class="btn-search">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- desenvolva um formulário para cadastro de novos pontos turísticos.-->
+    <!---->
+    <!--é importante que uma breve pesquisa seja realizada para identificar quais são os campos necessários para o cadastro de um ponto turístico. Ex.: nome, localização, valor de ingresso etc.-->
+    <main id="main-container">
+      <section class="main-form">
+        <h1 class="main-title">
+          Achou um <span class="sublinhado">ponto turístico novo</span> e
+          interessante?
+        </h1>
+        <div class="line"></div>
+        <h2>Conta aqui pra gente :)</h2>
+      </section>
+
+      <section class="form-section">
+        <form class="form-nome">
+          <!--info do usuario - text-->
+          <div>
+            <legend><i class="fa-solid fa-user"></i> Qual seu nome?</legend>
+
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" />
+          </div>
+          <div>
+            <legend class="email">
+              <i class="fa-solid fa-at"></i> Qual seu e-mail?
+            </legend>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="seunome@mail.com"
+            />
+          </div>
+        </form>
+
+        <!--local -->
+        <form action="" class="form-local">
+          <div>
+            <legend class="local">
+              <i class="fa-solid fa-location-dot"></i> Onde fica esse local?
+            </legend>
+
+            <input
+              type="text"
+              name="endereco"
+              id="endereco"
+              placeholder="Endereço"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="cidade"
+              id="cidade"
+              placeholder="Cidade"
+              required
+            />
+            <input
+              type="text"
+              name="pais"
+              id="pais"
+              placeholder="País"
+              required
+            />
+          </div>
+        </form>
+
+        <!--data -->
+        <form action="" class="form-data">
+          <legend class="data">
+            <i class="fa-solid fa-calendar-check"></i> Quando você foi?
+          </legend>
+
+          <input type="date" name="data" id="data" />
+        </form>
+
+        <form class="form-temporada" required>
+          <legend>Era alta ou baixa temporada?</legend>
+          <input
+            type="radio"
+            id="baixa"
+            name="temporada"
+            value="baixa"
+            checked
+          />
+          <label for="baixa">Baixa temporada</label>
+          <input type="radio" id="alta" name="temporada" value="alta" />
+          <label for="alta">Alta temporada</label>
+        </form>
+
+        <!--ingresso - input de range -->
+        <form action="" class="form-ingresso" required>
+          <div>
+            <legend><i class="fa-solid fa-ticket"></i> Cobra ingresso?</legend>
+            <input type="radio" name="ingresso" id="nao" value="nao" checked />
+            <label for="nao">Não</label>
+            <input type="radio" name="ingresso" id="sim" value="sim" />
+            <label for="sim">Sim</label>
+          </div>
+          <div>
+            <legend>Se sim, quanto é (em reais)?</legend>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="10"
+                max="1000"
+                value="50"
+                class="slider"
+                id="myRange"
+                step="10"
+              />
+              <p>Valor: <span id="demo"></span></p>
+            </div>
+          </div>
+        </form>
+
+        <!--transporte -->
+        <form action="">
+          <label for="transporte"
+            ><i class="fa-solid fa-person-walking"></i> Como você chegou até
+            lá?</label
+          >
+          <select name="transporte" id="" required>
+            <option value="">Escolha uma opção</option>
+            <option value="andando">A pé</option>
+            <option value="carroparticular">Carro particular</option>
+            <option value="carroaplicativo">Carro de aplicativo</option>
+            <option value="transportepublico">Transporte público</option>
+            <option value="aviao">Avião</option>
+          </select>
+        </form>
+        <form action="">
+          <legend>Foi fácil de chegar?</legend>
+
+          <input type="radio" name="transporte" id="sim" value="sim" />
+          <label for="sim">Sim</label
+          ><input type="radio" name="transporte" id="nao" value="nao" />
+          <label for="nao">Não</label>
+        </form>
+
+        <!--fotos-->
+        <form action="">
+          <legend>
+            <i class="fa-solid fa-images"></i> Mostre as fotos que você tirou
+          </legend>
+          <input type="file" />
+        </form>
+        <!--mensagem final-->
+        <form action="">
+          <legend class="mensagem">
+            Quer dar mais detalhes? Pode falar aqui:
+          </legend>
+          <textarea
+            name="texto"
+            id="texto"
+            cols="50"
+            rows="10"
+            placeholder="Digite sua mensagem aqui"
+          ></textarea>
+
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p class="text-footer">Copyright &#169;</p>
+      <button type="button" class="btn__newsletter">Assine a newsletter</button>
+    </footer>
+    <!-- CHAMAR JS -->
+    <script src="./js/scroll.js"></script>
+  </body>
+</html>
